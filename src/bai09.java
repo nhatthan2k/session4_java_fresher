@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class bai07 {
+public class bai09 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -14,22 +14,18 @@ public class bai07 {
             arr[i] = Integer.parseInt(scanner.nextLine());
         }
 
-        System.out.println("nhập phần tử bạn muốn chèn:");
-        int addValue = Integer.parseInt(scanner.nextLine());
+        System.out.println("nhập chỉ số cần xóa :");
+        int deleteIndex = Integer.parseInt(scanner.nextLine());
 
-        System.out.println("nhập chỉ số bạn muốn chèn:");
-        int addIndex = Integer.parseInt(scanner.nextLine());
 
-        int[] newArr = new int[numArr+1];
-
-        for (int i = 0; i<addIndex; i++) {
-            newArr[i] = arr[i];
+        for (int i=deleteIndex; i<arr.length - 1; i++) {
+            arr[i] = arr[i+1];
         }
 
-        newArr[addIndex] = addValue;
+        int[] newArr = new int[arr.length - 1];
 
-        for (int i = addIndex+1; i<newArr.length; i++){
-            newArr[i] = arr[i-1];
+        for (int i=0; i<newArr.length; i++) {
+            newArr[i] = arr[i];
         }
 
         for (int i = 0; i< newArr.length; i++) {
